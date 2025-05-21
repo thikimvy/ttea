@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>答案验证</title>
+    <style>
+        .hidden { display: none; } /* 默认隐藏图片 */
+        body { text-align: center; padding: 20px; }
+        input, button { margin: 10px; padding: 8px; }
+    </style>
+</head>
+<body>
+    <h2>请输入答案：</h2>
+    <input type="text" id="answerInput" placeholder="请输入您品出的香型">
+    <button onclick="checkAnswer()">提交</button>
+    
+    <!-- 图片区域（初始隐藏） -->
+    <div id="imageResult" class="hidden">
+        <img src="https://i-blog.csdnimg.cn/blog_migrate/0f927f02b4552b7ce77128facb93c508.png" alt="奖励图片" style="max-width: 100%;">
+    </div>
+
+    <script>
+        // 预设答案（可自定义）
+        const presetAnswer = "蜜兰香";
+
+        function checkAnswer() {
+            const userAnswer = document.getElementById("answerInput").value;
+            const imageDiv = document.getElementById("imageResult");
+
+            if (userAnswer === presetAnswer) {
+                imageDiv.classList.remove("hidden"); // 显示图片
+            } else {
+                alert("亲，品鉴有误哦，您再细品！");
+            }
+        }
+    </script>
+</body>
+</html>
